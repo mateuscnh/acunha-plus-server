@@ -1,8 +1,4 @@
 require("dotenv/config");
-const parse = require("pg-connection-string").parse;
-
-const pgconfig = parse(process.env.DATABASE_URL);
-pgconfig.ssl = { rejectUnauthorized: false };
 
 module.exports = {
   development: {
@@ -18,7 +14,10 @@ module.exports = {
   },
   production: {
     client: "pg",
-    connection: pgconfig,
+    connection: {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+    },
     migrations: {
       tableName: "knex_migrations",
       directory: `${__dirname}/src/database/migrations`,
