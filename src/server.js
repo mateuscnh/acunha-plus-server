@@ -22,7 +22,4 @@ app.use((error, req, res, next) => {
   res.json({ error: error.message });
 });
 
-app.listen(process.env.PORT || 3333, (err) => {
-  if (err) throw err;
-  console.log("Server running", process.env.PORT);
-});
+app.listen(process.env.PORT || 3333);
