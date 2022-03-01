@@ -1,5 +1,13 @@
 const knex = require("../database");
 module.exports = {
+  async index(req, res, next) {
+    try {
+      const results = await knex("movies").orderBy("id");
+      return res.json(results);
+    } catch (error) {
+      next(error);
+    }
+  },
   async moviesByGenre(req, res, next) {
     try {
       const movies = await knex("movies").orderBy("id");

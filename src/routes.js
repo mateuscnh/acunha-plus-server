@@ -12,6 +12,7 @@ routes
   .get("/users", UserController.index)
   .post("/users", UserController.create)
   // movies
+  .get("/movies/all", MovieController.index)
   .get("/movies", MovieController.moviesByGenre)
   .get("/movies/:id", MovieController.movieById)
   .post("/movies", MovieController.create)
