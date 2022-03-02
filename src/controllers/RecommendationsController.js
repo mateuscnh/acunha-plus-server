@@ -58,7 +58,7 @@ module.exports = {
 
       const allItemsIds = [
         ...new Set(
-          allMoviesId.slice(0, 10).concat(allRecommendedMoviesIds.slice(0, 10))
+          allMoviesId.slice(0, 8).concat(allRecommendedMoviesIds.slice(0, 8))
         ),
       ];
 
